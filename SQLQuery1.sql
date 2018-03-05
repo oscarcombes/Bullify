@@ -1,0 +1,5 @@
+﻿Insert into Consultants (FirstName, LastName, Description, Image, BullyStatus)
+Values 
+('Hanna', 'Pawahi', 'Hanna är en konsult som vet vad hon vill, och inte är rädd för att låta andra få reda på det! Med Hanna blir jobbet gjort, ofta med ett skratt eller två, men se upp för att försöka få henne att göra något hon inte vill.', 'https://uploads-ssl.webflow.com/58452de5f28ead16137e2298/5a82e45a6a0edd000179cc95_Academic_Work_2018-01-23_026%20kopiera.png', 1)
+('Oscar', 'Combes', 'Oscar är inte bara en fena på objekt och alla cybervärldens programmeringsspråk, han fyller dessutom sina kollegors hjärtan med värme sekunden han kommer till jobbet!', 'https://uploads-ssl.webflow.com/58452de5f28ead16137e2298/5a82db84c40e4a00018e5638_Academic_Work_2018-01-23_011%20kopiera.png', 1)
+('Theo', 'Doroftei', 'Theo löser de allra flesta IT-problem som en kung, och sågar sina kollegors självförtroende när han 
