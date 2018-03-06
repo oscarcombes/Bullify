@@ -38,10 +38,9 @@ namespace Bullify.Controllers
             var model = repository.GetConsultantById(id);
             return PartialView("_InfoBox", model);
 
-          
         }
 
-
+        
        
         
     }

@@ -15,7 +15,7 @@ namespace Bullify.Models.ViewModels
         public string Image { get; set; }
         public bool BullyStatus { get; set; }
 
-        public ICollection<Skills> Skills { get; set; }
+        public string[] Skills { get; set; }
 
     }
 }

@@ -5,21 +5,31 @@
 </div>
 
 @*<div id="infoBoxSkills">
-    <ul>
+        <ul>
 
-        @foreach (var item in Model.Skills)
-        {
-       
-            @item.Skillset 
-        
-        }
+            @foreach (var item in Model.Skills)
+            {
 
-    </ul>
+                @item.Skillset
 
-</div>*@
+            }
+
+        </ul>
+
+    </div>*@
 
 <div id="infoBox1">
-    <h1>NAME</h1>
+    <h1>@Model.FirstName @Model.LastName</h1>
     @Model.Description
+    <br />
+    Consultant skills:
+    <ul>
+        @foreach (var item in Model.Skills)
+        {
+            <li>@item</li>
+        }
+    </ul>
+    <br />
+    @Model.BullyStatus
 </div>
 

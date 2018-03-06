@@ -1,5 +1,6 @@
 ﻿using Bullify.Models.Entities;
 using Bullify.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,17 +40,20 @@ namespace Bullify.Models
 
         public InfoBoxVM GetConsultantById(int id)
         {
-            
-            var consultant = context.Consultants.Find(id);
+
+            var consultant = context.Consultants
+                .Include(o => o.Skills)
+                .Where(o => o.Id == id)
+                .Single();
+
             return new InfoBoxVM {Id = consultant.Id,
                 Description = consultant.Description,
                 Image = consultant.Image,
-                Skills = consultant.Skills,
+                Skills = consultant.Skills
+                        .Select(o => o.Skillset).ToArray(),
                 BullyStatus = consultant.BullyStatus};
-            
-
-         
-          
         }
+
+        
     }
 }
