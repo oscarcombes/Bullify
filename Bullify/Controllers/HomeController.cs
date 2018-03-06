@@ -16,25 +16,25 @@ namespace Bullify.Controllers
         {
             return View();
         }
-        [HttpGet]
-        [Route("movie/infoBox/{id}")]
-        public IActionResult MovieBox(int id)
-        {
-            var person = repository.GetPersonById(id);
-            return PartialView("_InfoBox", new InfoBoxVM  
-            {
-                FirstName = person.FirstName,
-                MovieSum = person.LastName
-            });
-        }
+        //[HttpGet]
+        //[Route("Home/infoBox/{id}")]
+        //public IActionResult MovieBox(int id)
+        //{
+        //    var person = repository.GetPersonById(id);
+        //    return PartialView("_InfoBox", new InfoBoxVM
+        //    {
+        //        FirstName = person.FirstName,
+        //        MovieSum = person.LastName
+        //    });
+        //}
 
-        [Route("settings/display")]
-        public IActionResult Display(DisplayVM model)
-        {
-            model.Email = cache.Get<string>(magicString);
-            model.Message = (string)TempData[magicString];
-            model.CompanyName = HttpContext.Session.GetString(magicString);
-            return View(model);
-        }
+        //[Route("settings/display")]
+        //public IActionResult Display(DisplayVM model)
+        //{
+        //    model.Email = cache.Get<string>(magicString);
+        //    model.Message = (string)TempData[magicString];
+        //    model.CompanyName = HttpContext.Session.GetString(magicString);
+        //    return View(model);
+        //}
     }
 }

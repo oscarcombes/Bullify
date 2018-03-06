@@ -1,3 +1,29 @@
 ﻿body {
     background: linear-gradient(to bottom right, #4a4949, #000000);
 }
+
+#logoDiv{
+    background-color:white;
+    align-content:center;
+    margin:auto;
+}
+
+#centerDiv{
+    align-content:center;
+}
+
+#personsDiv{
+    float:left;
+    
+
+}
+
+#infoBox{
+    color:red;
+    border:solid;
+    border-color:green
+}
+#imgDiv{
+    border:solid;
+    color: lime;
+}
