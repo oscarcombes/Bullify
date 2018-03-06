@@ -33,7 +33,7 @@ namespace Bullify
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
         }
     }
 }

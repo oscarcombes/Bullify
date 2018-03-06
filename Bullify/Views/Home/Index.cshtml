@@ -1,8 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model IndexVM[]
+
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <link href="~/Scripts/StyleSheet.css" rel="stylesheet" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
     <title>Bullify</title>
 </head>
 <body>
@@ -10,17 +13,44 @@
         <img src="https://uploads-ssl.webflow.com/5840159b0faf16be51d26d72/5a94494504115100018cfd2e_academy_logo_w_tag_RGB.svg" />
     </div>
     <h3>Bullisharp</h3>
-    <div id="centerDiv">
-        <div id="personsDiv">
-            @Model  blabla foreachloop för att få ut lista med länkar
-        </div>
-        <div id="infoBox">
-            @Model  blablba
-            <div id="imgDiv">
-                @Model  imgsrc blab
-            </div>
-        </div>
+
+    @*<div id="centerDiv"></div>*@
+
+    <div>
+        <ul>
+            @foreach (var consultant in Model)
+            {
+
+
+                <li onclick="functionname(@consultant.Id)">
+                    @*<a asp-controller="Home" asp-action="InfoBox" asp-route-id="@consultant.Id">*@@consultant.FirstName, @consultant.LastName
+                </li>
+
+            }
+        </ul>
     </div>
-    test
+
+    <div id="consultantDiv"> </div>
+
+    <script>
+
+
+        
+        function functionname(consultantId){
+           
+            
+            $.ajax({
+                url: "/home/InfoBox/" + consultantId,
+                type: "GET",
+                data: null,
+                success: function (result) {
+                    $("#consultantDiv").html(result);
+
+                }
+            });
+
+        };
+
+    </script>
 </body>
 </html>

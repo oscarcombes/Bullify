@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -6,6 +7,8 @@ namespace Bullify.Models.Entities
 {
     public partial class BulliDatabaseContext : DbContext
     {
+       
+
         public virtual DbSet<Consultants> Consultants { get; set; }
         public virtual DbSet<Skills> Skills { get; set; }
 
