@@ -22,7 +22,7 @@
     <h1>@Model.FirstName @Model.LastName</h1>
     @Model.Description
     <br />
-    Consultant skills:
+    <h3>Konsultförmågor:</h3>
     <ul>
         @foreach (var item in Model.Skills)
         {
@@ -30,6 +30,11 @@
         }
     </ul>
     <br />
-    @Model.BullyStatus
+    <h3>Mobbningsstatus</h3>
+    @if (Model.BullyStatus==true)
+    {<p>Mobbare</p>}
+    else
+        {<p>Offer</p>}
+   
 </div>
 
