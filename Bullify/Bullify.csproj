@@ -5,15 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Scripts\**" />
+    <Content Remove="wwwroot\Scripts\**" />
+    <EmbeddedResource Remove="wwwroot\Scripts\**" />
+    <None Remove="wwwroot\Scripts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\StyleSheet.css" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\Scripts\" />
   </ItemGroup>
 
 </Project>

@@ -10,48 +10,75 @@
     <title>Bullify</title>
 </head>
 <body>
-    <div id="logoDiv">
-        <img src="https://uploads-ssl.webflow.com/5840159b0faf16be51d26d72/5a94494504115100018cfd2e_academy_logo_w_tag_RGB.svg" />
+    <div class="divTable greyGridTable">
+        <div class="divTableHeading">
+            <div class="divTableRow">
+                <div class="divTableHead"></div>
+                <div class="divTableHead">
+                    <div id="rubrik">
+                        <h1>Bullisharp</h1>
+                    </div>
+                </div>
+                <div class="divTableHead"></div>
+            </div>
+        </div>
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <div>
+                        <ul>
+                            @foreach (var consultant in Model)
+                            {
+                                <li onclick="functionname(@consultant.Id)">
+                                    @*<a asp-controller="Home" asp-action="InfoBox" asp-route-id="@consultant.Id">*@@consultant.FirstName, @consultant.LastName
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="divTableCell">
+                    <div id="consultantDiv">
+                        <script>
+                            function functionname(consultantId) {
+                                $.ajax({
+                                    url: "/home/InfoBox/" + consultantId,
+                                    type: "GET",
+                                    data: null,
+                                    success: function (result) {
+                                        $("#consultantDiv").html(result);
+                                    }
+                                });
+                            };
+                        </script>
+                    </div>
+                </div>
+                <div class="divTableCell">cell3_1</div>
+            </div>
+        </div>
+        <div class="divTableFoot tableFootStyle">
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <img src="https://uploads-ssl.webflow.com/5840159b0faf16be51d26d72/5a94494504115100018cfd2e_academy_logo_w_tag_RGB.svg" />
+                </div>
+            </div>
+        </div>
     </div>
-    <h3>Bullisharp</h3>
 
-    @*<div id="centerDiv"></div>*@
+        @*<div id="consultantDiv">
+            <script>
+                function functionname(consultantId) {
+                    $.ajax({
+                        url: "/home/InfoBox/" + consultantId,
+                        type: "GET",
+                        data: null,
+                        success: function (result) {
+                            $("#consultantDiv").html(result);
 
-    <div>
-        <ul>
-            @foreach (var consultant in Model)
-            {
+                        }
+                    });
+                };
+            </script>
+        </div>*@
 
-
-                <li onclick="functionname(@consultant.Id)">
-                    @*<a asp-controller="Home" asp-action="InfoBox" asp-route-id="@consultant.Id">*@@consultant.FirstName, @consultant.LastName
-                </li>
-
-            }
-        </ul>
-    </div>
-
-    <div id="consultantDiv"> </div>
-
-    <script>
-
-
-        
-        function functionname(consultantId){
-           
-            
-            $.ajax({
-                url: "/home/InfoBox/" + consultantId,
-                type: "GET",
-                data: null,
-                success: function (result) {
-                    $("#consultantDiv").html(result);
-
-                }
-            });
-
-        };
-
-    </script>
 </body>
 </html>
