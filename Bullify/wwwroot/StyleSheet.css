@@ -1,10 +1,9 @@
 ﻿body {
-    background-color:#b6ff00;
+    background-color:#000;
 }
 #rubrik{
-    background-color: white;
-
- 
+    color: white;
+    width:100%;
 }
 
 #centerDiv{
@@ -16,7 +15,6 @@
     color:white;
     font-size:32px;
     font-weight:bold;
-
 }
 
 menuDiv{
@@ -26,9 +24,7 @@ menuDiv{
 
 #infoBoxpic {
     float:left;
-    color: red;
-    border: solid;
-    border-color: green
+  
 }
 #imgDiv{
     border:solid;
@@ -39,41 +35,25 @@ li {
     list-style-type: none;
     font-size:32px;
     color:red;
-
 }
 
 #logoDiv{
     margin:auto;
     align-content:center;
     background-color:white;
-
 }
 h3{
     text-align:center;
         color:red;
         font-size:32px;
-
 }
-centerDiv{
+
+#infoBox1{
     float:left;
-    padding-right:15%;
-    padding-left:15%;
-    align-content:center;
+    display:block;
+    background:#000;
+    padding-left:230px;
 }
-footer {
-    height: 10em;
-    position: relative
-}
-/*#logoDiv {
-    background-color: white;
-     margin: 0;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}*/
-
 div.greyGridTable {
     border: 2px solid #FFFFFF;
     width: 100%;
@@ -134,6 +114,7 @@ div.greyGridTable {
 
 .divTableCell, .divTableHead {
     display: table-cell;
+    vertical-align:top;
 }
 
 .divTableHeading {
@@ -146,4 +127,9 @@ div.greyGridTable {
 
 .divTableBody {
     display: table-row-group;
+}
+
+.footerDiv{
+    width:100%;
+    background: #ff6a00;
 }
