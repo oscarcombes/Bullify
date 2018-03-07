@@ -33,13 +33,17 @@
 
     <div id="consultantDiv"> </div>
 
+    @*<input asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Id">"Update Consultant" />*@
+
+    @*<input type="submit" value="Update Existing Profile" />*@
+
     <script>
 
 
-        
-        function functionname(consultantId){
-           
-            
+
+        function functionname(consultantId) {
+
+
             $.ajax({
                 url: "/home/InfoBox/" + consultantId,
                 type: "GET",

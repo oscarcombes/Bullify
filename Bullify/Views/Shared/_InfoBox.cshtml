@@ -4,20 +4,6 @@
     <img src="@Model.Image" />
 </div>
 
-@*<div id="infoBoxSkills">
-        <ul>
-
-            @foreach (var item in Model.Skills)
-            {
-
-                @item.Skillset
-
-            }
-
-        </ul>
-
-    </div>*@
-
 <div id="infoBox1">
     <h1>@Model.FirstName @Model.LastName</h1>
     @Model.Description
@@ -31,10 +17,14 @@
     </ul>
     <br />
     <h3>Mobbningsstatus</h3>
-    @if (Model.BullyStatus==true)
+    @if (Model.BullyStatus == true)
     {<p>Mobbare</p>}
     else
-        {<p>Offer</p>}
-   
+    {<p>Offer</p>}
+
+    <form method="get" action="home/edit/@Model.Id">
+        <button type="submit">Uppdatera profil</button>
+    </form>
+
 </div>
 

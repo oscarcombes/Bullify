@@ -40,8 +40,26 @@ namespace Bullify.Controllers
 
         }
 
-        
-       
-        
+        [HttpGet]
+        [Route("Home/Edit/{id}")]
+        public IActionResult Edit(int id)
+        {
+            var model = repository.GetEditViewById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [Route("Home/Edit/{id}")]
+        public IActionResult Edit(EditVM model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            repository.UpdateConsultant(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
     }
 }

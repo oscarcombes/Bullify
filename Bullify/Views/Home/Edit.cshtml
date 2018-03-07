@@ -1,0 +1,60 @@
+﻿@model EditVM
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+
+    <title>Edit</title>
+</head>
+<body>
+
+    <div id="infoBoxpic">
+        <img src="@Model.Image" />
+    </div>
+
+    <div id="infoBox1">
+        <form asp-controller="Home" asp-action="Edit">
+
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+
+            <label asp-for="Skills"></label>
+            <textarea asp-for="Skills" />
+            <span asp-validation-for="Skills"></span>
+
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+
+            <button type="submit">Uppdatera profil</button>
+        </form>
+        @*@Model.FirstName @Model.LastName
+            @Model.Description
+            <br />
+            <h3>Konsultförmågor:</h3>
+            <ul>
+                @foreach (var item in Model.Skills)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+            <br />
+            <h3>Mobbningsstatus</h3>
+            @if (Model.BullyStatus == true)
+            {<p>Mobbare</p>}
+            else
+            {<p>Offer</p>}*@
+
+    </div>
+
+</body>
+</html>
